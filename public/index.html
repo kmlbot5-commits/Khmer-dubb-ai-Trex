@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trex Story AI 🦖</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="bg"></div>
+<main>
+  <header>
+    <div class="logo">🦖</div>
+    <div><h1>Trex Story AI</h1><p>បម្លែងរឿងបរទេស → សម្រាយជាភាសាខ្មែរ</p></div>
+  </header>
+
+  <section class="card">
+    <div id="drop" class="drop">
+      <div class="icon">🎬</div>
+      <h2>ដាក់វីដេអូរឿងនៅទីនេះ</h2>
+      <p>MP4, MOV, WebM · អតិបរមា 2GB</p>
+      <input id="file" type="file" accept="video/*" hidden>
+      <button id="choose">📤 ជ្រើសរើសវីដេអូ</button>
+      <div id="name" class="filename"></div>
+    </div>
+
+    <div class="settings">
+      <label>ភាសាដើម
+        <select id="source"><option>Auto Detect</option><option>English</option><option>Korean</option><option>Chinese</option><option>Japanese</option></select>
+      </label>
+      <label>ភាសាលទ្ធផល
+        <select disabled><option>🇰🇭 Khmer</option></select>
+      </label>
+      <label>ប្រភេទសម្រាយ
+        <select id="style">
+          <option value="movie-recap">សម្រាយរឿងខ្លីៗ / YouTube</option>
+          <option value="cinematic">Cinematic</option>
+          <option value="funny">កំប្លែង</option>
+          <option value="serious">សំឡេងធ្ងន់ / Serious</option>
+        </select>
+      </label>
+    </div>
+
+    <button id="start" class="primary" disabled>🚀 ចាប់ផ្តើមសម្រាយ</button>
+
+    <div id="progress" class="progress hidden">
+      <div class="step active">1. Upload</div>
+      <div class="step">2. Transcribe</div>
+      <div class="step">3. សរសេរ Script ខ្មែរ</div>
+      <div class="step">4. Khmer Voice</div>
+      <div class="step">5. Export MP4</div>
+    </div>
+
+    <div id="result" class="result hidden">
+      <h2>📝 Khmer Narration Script</h2>
+      <textarea id="script" rows="9"></textarea>
+      <div class="actions">
+        <button id="copy">📋 Copy Script</button>
+        <button id="new">＋ New Video</button>
+      </div>
+      <p class="hint">នេះជា starter MVP។ ដើម្បីបង្កើត MP4 សម្រេច ត្រូវភ្ជាប់ Speech-to-Text + AI + Khmer TTS + FFmpeg worker។</p>
+    </div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
